@@ -98,7 +98,6 @@ dependencies {
     implementation "androidx.lifecycle:lifecycle-viewmodel-savedstate:$lifecycle_version"
 
     // Annotation processor
-//    kapt "androidx.lifecycle:lifecycle-compiler:$lifecycle_version"
     implementation "androidx.lifecycle:lifecycle-common-java8:$lifecycle_version"
 
     implementation "androidx.core:core-ktx:$core_ktx_version"
@@ -110,8 +109,6 @@ dependencies {
     //-------------------------------------Androidx---------------------------------------------
 
     //-------------------------------------Compose----------------------------------------------
-
-
 
     implementation "androidx.compose.ui:ui:$compose_version"
     // Tooling support (Previews, etc.)
@@ -135,15 +132,10 @@ dependencies {
     // UI Tests
     androidTestImplementation 'androidx.compose.ui:ui-test-junit4:1.0.0-beta09'
 
-
-
     //-------------------------------------hilt---------------------------------------------
 
     implementation "com.google.dagger:hilt-android:$hilt_version"
     kapt "com.google.dagger:hilt-android-compiler:$hilt_version"
-
-//    implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hilt_lifecycle_version"
-//    kapt "androidx.hilt:hilt-compiler:$hilt_lifecycle_version"
 
     // Hilt testing dependencies
     androidTestImplementation "com.google.dagger:hilt-android-testing:$hilt_version"
@@ -155,7 +147,6 @@ dependencies {
 
     implementation "com.squareup.retrofit2:retrofit:$retrofit_version"
     implementation "com.squareup.retrofit2:converter-gson:$retrofit_version"
-//    implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-experimental-adapter:1.0.0'
     implementation 'com.jakewharton.retrofit:retrofit2-kotlin-coroutines-adapter:0.9.2'
 
     //-------------------------------------retrofit2---------------------------------------------
@@ -182,28 +173,9 @@ dependencies {
     kapt "androidx.room:room-compiler:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
 
-
-    // optional - RxJava2 support for Room
-//    implementation "androidx.room:room-rxjava2:$room_version"
-
-    // optional - RxJava3 support for Room
-//    implementation "androidx.room:room-rxjava3:$room_version"
-
-    // optional - Guava support for Room, including Optional and ListenableFuture
-//    implementation "androidx.room:room-guava:$room_version"
-
     // optional - Test helpers
     testImplementation "androidx.room:room-testing:$room_version"
 
-
-    // Extensions = ViewModel + LiveData
-//    implementation "android.arch.lifecycle:extensions:1.1.1"
-    //noinspection LifecycleAnnotationProcessorWithJava8
-//    kapt "android.arch.lifecycle:compiler:1.1.1"
-// Room
-//    implementation "android.arch.persistence.room:runtime:1.1.1"
-//    kapt "android.arch.persistence.room:compiler:1.1.1"
     //-------------------------------------Room----------------------------------------------
-
 
 }
