@@ -3,8 +3,8 @@ This repository contains the sample code for the Book My Room assignment in Andr
 
 # Screenshots
   <table style="width:100%">
-    <th><img src="https://www.dropbox.com/s/66jpjyyzy7tzjth/image%20%2814%29.png?dl=0" alt="Book My Room App" width="200"/></th>
-    <th><img src="https://www.dropbox.com/s/kua519dww0f5din/image%20%2815%29.png?dl=0" alt="Confirm booking" width="200"/></th>
+    <th><img src="https://github.com/ivamacio/bookmyroom/blob/main/app/src/main/res/drawable/screenshot_room_list.png" alt="Book My Room App" width="200"/></th>
+    <th><img src="https://github.com/ivamacio/bookmyroom/blob/main/app/src/main/res/drawable/screenshot_confirmation.png" alt="Confirm booking" width="200"/></th>
   </table>
   
 # Kanban
