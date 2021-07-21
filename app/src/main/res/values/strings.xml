@@ -4,6 +4,7 @@
     <string name="title_dashboard">Dashboard</string>
 
     <string name="roomCard_emptyState_text">"Heya!\nAll rooms have been booked!\nCome back later :)</string>
+    <string name="roomCard_searchRoom_text">Enter a room name</string>
     <string name="roomCard_quickBooking_button">Quick booking</string>
 
     <string name="roomCard_bookRoomDialog_title">Quick booking</string>

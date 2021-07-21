@@ -10,7 +10,7 @@ import javax.inject.Inject
 
 @ExperimentalCoroutinesApi
 interface RoomLocalRepository {
-    suspend fun getAlphabetizedRooms(): Flow<List<Room?>?>?
+    suspend fun getAlphabetizedRooms(searchByName: String): Flow<List<Room?>?>?
     suspend fun insertRoom(room: Room)
     suspend fun updateRoom(room: Room)
 }
@@ -18,9 +18,10 @@ interface RoomLocalRepository {
 @ExperimentalCoroutinesApi
 class RoomLocalRepositoryImpl @Inject constructor(private val roomDao: RoomDao): RoomLocalRepository {
 
-    private var _rooms: Flow<List<Room?>?>? = roomDao.getAlphabetizedRooms()
+    private var _rooms: Flow<List<Room?>?>? = roomDao.getAlphabetizedRoomsWithSearch()
 
-    override suspend fun getAlphabetizedRooms(): Flow<List<Room?>?>? {
+    override suspend fun getAlphabetizedRooms(searchByName: String): Flow<List<Room?>?>? {
+        _rooms = roomDao.getAlphabetizedRoomsWithSearch(searchByName)
         return _rooms
     }
 
