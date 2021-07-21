@@ -124,7 +124,7 @@ class ExampleUnitTest {
             RoomLocalRepositoryMockData.NAME,
             RoomLocalRepositoryMockData.SPOTS,
             RoomLocalRepositoryMockData.THUMBNAIL)
-        viewModel.requestBookRoom(roomViewData)
+        viewModel.requestBookRoom(searchState, roomViewData)
 
         Assert.assertFalse(viewModel.isRoomBooked.value)
         Assert.assertFalse(result.value.isNullOrEmpty())
@@ -140,7 +140,7 @@ class ExampleUnitTest {
             RoomLocalRepositoryMockData.NAME,
             RoomLocalRepositoryMockData.SPOTS,
             RoomLocalRepositoryMockData.THUMBNAIL)
-        viewModel.requestBookRoom(roomViewData)
+        viewModel.requestBookRoom(searchState, roomViewData)
 
         Assert.assertTrue(viewModel.isRoomBooked.value)
         Assert.assertTrue(result.value.isNullOrEmpty())
@@ -165,7 +165,6 @@ class ExampleUnitTest {
         val response = ResponseResult.Success(successfulBookingResponse)
         return flowOf(response)
     }
-
 
     private fun getFetchEmptyRoomList(): Flow<ResponseResult.Success<RoomsResponse>> {
         val data = arrayListOf<Room>()

@@ -29,6 +29,10 @@ class HomeViewModel @Inject constructor(private val roomAPIRepository: RoomAPIRe
     val isRoomBooked: StateFlow<Boolean>
         get() = _isRoomBooked
 
+    private val _searchName = MutableStateFlow("")
+    val searchName: StateFlow<String>
+        get() = _searchName
+
     private val _errorMessage: MutableStateFlow<String?> = MutableStateFlow("")
     val errorMessage: StateFlow<String?>
         get() = _errorMessage
@@ -38,9 +42,10 @@ class HomeViewModel @Inject constructor(private val roomAPIRepository: RoomAPIRe
         fetchRooms()
     }
 
-    private fun readRooms() {
+    fun readRooms(searchByName: String = "") {
+        _searchName.value = searchByName
         viewModelScope.launch {
-            roomLocalRepository.getAlphabetizedRooms()?.collectLatest { result ->
+            roomLocalRepository.getAlphabetizedRooms(searchByName)?.collectLatest { result ->
                 result?.let { result ->
                     val roomViewData = arrayListOf<RoomViewData>()
                     result.forEach {
@@ -73,7 +78,8 @@ class HomeViewModel @Inject constructor(private val roomAPIRepository: RoomAPIRe
         }
     }
 
-    fun requestBookRoom(roomViewData: RoomViewData) {
+    fun requestBookRoom(searchByName: String, roomViewData: RoomViewData) {
+        _searchName.value = searchByName
         viewModelScope.launch {
             val room = RoomMapper().map(roomViewData)
             roomAPIRepository.bookRoom(room).collect { result ->

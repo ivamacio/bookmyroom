@@ -1,6 +1,5 @@
 package com.bookmyroom.ui.themes
 
-import androidx.compose.material.darkColors
 import androidx.compose.material.lightColors
 import androidx.compose.ui.graphics.Color
 
@@ -12,6 +11,8 @@ val Heather02 = Color(0xFFBD9CDF)
 val Yellow800 = Color(0xFFF29F05)
 
 val Red300 = Color(0xFFEA6D7E)
+
+val Grey = Color(0xFFEFEFEF)
 
 val BookMyRoomColors = lightColors(
     primary = Flirt01,

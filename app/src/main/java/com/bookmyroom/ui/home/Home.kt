@@ -1,5 +1,6 @@
 package com.bookmyroom.ui.home
 
+import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxSize
@@ -13,16 +14,21 @@ import androidx.compose.ui.res.stringResource
 import com.bookmyroom.R
 import com.bookmyroom.ui.components.*
 
+@ExperimentalFoundationApi
 @Composable
 fun Home(viewModel: HomeViewModel) {
     val viewState by viewModel.state.collectAsState()
     val dialogState by viewModel.isRoomBooked.collectAsState()
+    val searchState by viewModel.searchName.collectAsState()
     val errorMessageState by viewModel.errorMessage.collectAsState()
 
     Box(Modifier.fillMaxSize()) {
         LazyColumn(modifier = Modifier.fillMaxHeight()) {
+            stickyHeader {
+                BMRSearch(viewModel)
+            }
             items(items = viewState.showRooms) {
-                    room -> BMRCard(room = room, onClick = { viewModel.requestBookRoom(room) })
+                    room -> BMRCard(room = room, onClick = { viewModel.requestBookRoom(searchState, room) })
             }
         }
 

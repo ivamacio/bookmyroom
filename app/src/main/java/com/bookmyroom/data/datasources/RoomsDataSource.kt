@@ -14,5 +14,5 @@ class RoomsDataSource @Inject constructor(connectionManager: ConnectionManager,
 
     suspend fun getRooms(): ResponseResult<RoomsResponse> = getResult { roomsApi.fetchRooms() }
 
-    suspend fun bookRoom(roomId: Room): ResponseResult<RoomBookingResponse> = getResult { roomsApi.bookRoom() }
+    suspend fun bookRoom(room: Room): ResponseResult<RoomBookingResponse> = getResult { roomsApi.bookRoom() }
 }

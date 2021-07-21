@@ -8,4 +8,7 @@ object CardMeasurement {
     val Height = 225.dp
 }
 
-
+object SearchMeasurement {
+    val Padding = 18.dp
+    val PaddingTop = 12.dp
+}
